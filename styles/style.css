@@ -25,6 +25,12 @@ button {
   font-family: inherit;
 }
 
+h1 {
+  font-size: 30px;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
 .input-cont {
   padding: 20px;
   display: flex;
