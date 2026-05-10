@@ -1,0 +1,158 @@
+@font-face {
+  font-family: 'roboto';
+  src: url(../fonts/roboto.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: white;
+  color: black;
+  font-family: 'roboto', Arial;
+}
+
+input,
+button {
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.input-cont {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.todo-name {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #c2c2c2;
+  border-radius: 5px;
+  outline: none;
+}
+.todo-name:focus-visible {
+  outline: 2px solid #007200;
+  outline-offset: -1px;
+}
+
+.add-btn {
+  padding: 10px 40px;
+  border: 1px solid #008000;
+  border-radius: 5px;
+  background-color: #007200;
+  color: white;
+  transition: .1s;
+}
+.add-btn:hover {
+  background-color: #008800;
+}
+.add-btn:active {
+  background-color: #009c00;
+}
+
+.guide {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: monospace;
+}
+
+.guide > code {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #222222;
+  color: white;
+}
+
+.todos-cont {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo {
+  width: min(100%, 500px);
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.todo > input[type="checkbox"] {
+  appearance: none;
+  border: 1px solid #6e6e6e;
+  box-shadow: 0 1px 5px #00000040;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  position: relative;
+}
+.todo > input[type="checkbox"]:checked {
+  background-color: green;
+  border-color: green;
+}
+.todo > input[type="checkbox"]:checked::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 8px;
+  border: 2px solid white;
+  border-width: 0 0 4px 4px;
+  top: 50%;
+  left: 50%;
+  transform: rotate(-50deg) translate(0, -100%);
+}
+
+.bar {
+  display: flex;
+  gap: 15px;
+  border: 1px solid rgb(214, 214, 214);
+  padding: 8px 10px;
+  width: 100%;
+  position: relative;
+  box-shadow: 1px 1px 4px #00000040;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.bar::selection {
+  background-color:#007200;
+  color: white;
+}
+
+.todo.completed > .bar > p {
+  color: #808080;
+  text-decoration: 2px solid line-through gray;
+}
+
+.bar > button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding: 0 20px;
+  border: none;
+  background-color: #a00000;
+  color: white;
+  transition: .1s ease-in-out;
+}
+.bar > button:hover {
+  background-color: #860000;
+}
+.bar > button:active {
+  background-color: #ac0000;
+}
